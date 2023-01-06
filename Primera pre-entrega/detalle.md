@@ -12,8 +12,5 @@ Uso de if:
 Uso de switch:
 - para armar el menú que tiene el usuario
 
-Uso de for:
-- para dibujar el menú
-
-Uso de while:
+Uso de do-while:
 - para que el juego quede en funcionamiento hasta tanto se aprete la combinación para salir
