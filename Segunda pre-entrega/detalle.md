@@ -18,3 +18,15 @@ Uso de do-while:
 
 # DETALLES DE LA SEGUNDA PRE-ENTREGA
 
+La idea ahora es utilizar objetos
+
+
+Checklist de elementos necesarios para la entrega:
+
+- [ ] Entradas con prompt()
+- [ ] Declarar variables
+- [ ] Instanciar objetos
+- [ ] Crear funciones y/o métodos
+- [ ] Salidas con alert() o console.log()
+- [ ] Uso de Arrays
+- [ ] Uso de métodos de Arrays (búsqueda, filtrado, ...)
