@@ -58,6 +58,9 @@ class Personaje extends SerVivo {
             'Poción de vida',
             'Gran poción de vida',
             'Poción de mana'
+        ],
+        'municiones': [
+            'flecha'
         ]
     }
 
@@ -68,11 +71,11 @@ class Personaje extends SerVivo {
         this.pociones = this.obj_items['pociones']
     }
 
-    atacarArco() { }
+    // atacarArco(enemigo) { }
 
-    atacarMagia() { }
+    // atacarMagia() { }
 
-    usarPocion() { }
+    // usarPocion() { }
 
 }
 
