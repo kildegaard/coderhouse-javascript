@@ -6,10 +6,25 @@ const bienvenida = () => {
     alert(text2)
 }
 
+const cargaDePersonajes = () => {
+    let personaje = new Personaje(nombre = 'Cain', vida = 80, mana = 100)
+    let enemigo = new Enemigo(nombre = 'Lucifer', vida = 100)
+}
+
+const turnoEnemigo = () => {
+    const tiradaDeAzar = tirarDado(2)
+    if (tiradaDeAzar == 1) {
+        // El enemigo ataca
+    }
+    else {
+        // El enemigo se pone en posición defensiva para el siguiente turno
+    }
+}
+
 const menu = () => {
     let opcion
     do {
-        opcion = parseInt(prompt("Opciones disponibles:\n1 - Ver vida restante del enemigo\n2 - Atacar al enemigo\n3 - Salir del juego\n\nIngrese una opción: "))
+        opcion = parseInt(prompt("Opciones disponibles:\n1 - Atacar al enemigo\n2 - Defenderse el próximo turno\n3 - Salir del juego\n\nIngrese una opción: "))
 
         switch (opcion) {
             case 1:
@@ -30,6 +45,7 @@ const menu = () => {
 
 const main = () => {
     bienvenida()
+    cargaDePersonajes()
     // menu()
 }
 

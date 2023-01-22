@@ -18,19 +18,23 @@ class SerVivo {
     atacarFisico(enemigo) {
         let danio = tirarDado(dadoCaras)
         let danioRealizado
+
+        // Evalúo la situación de DEFENDA o NO DEFENSA
         if (enemigo.estaDefendiendo) {
             danioRealizado = danio * 0.5 // Defenderse hace que haga la mitad del daño
+            enemigo.estaDefendiendo = false
         }
         else {
             danioRealizado = danio
         }
 
+        // Evalúo si el daño realizado supera la vida que queda
         if ((enemigo.vida - danioRealizado) < 0) {
             enemigo.vida = 0
             // danio = 0
         }
         else {
-            enemigo.vida -= danioRealizado;
+            enemigo.vida -= danioRealizado
         }
     }
 
@@ -91,9 +95,9 @@ class Enemigo extends SerVivo {
 
 // Declaro un personaje y un enemigo
 /*
-*/
 let personaje = new Personaje(nombre = 'Gus', vida = 100, mana = 100)
 let enem = new Enemigo(nombre = 'Monster', vida = 100)
+*/
 // Viendo si se pueden leer las variables
 /*
 console.log(personaje.vida)
