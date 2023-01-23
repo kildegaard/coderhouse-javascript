@@ -15,36 +15,41 @@ class SerVivo {
         this.estaDefendiendo = false // Flag para saber si se está defendiendo o no
     }
 
-    atacarFisico(enemigo) {
+    saludar() {
+        console.log('Holiiis')
+    }
+
+    atacarFisico(oponente) {
         let danio = tirarDado(dadoCaras)
         let danioRealizado
 
         // Evalúo la situación de DEFENDA o NO DEFENSA
-        if (enemigo.estaDefendiendo) {
+        if (oponente.estaDefendiendo) {
+            alert('Defensas en alto! Reducción de daño del 50%')
             danioRealizado = danio * 0.5 // Defenderse hace que haga la mitad del daño
-            enemigo.estaDefendiendo = false
+            oponente.defender() // Al hacer esto bajo sus defensas para la siguiente ronda
+            // oponente.estaDefendiendo = false
         }
         else {
             danioRealizado = danio
         }
 
         // Evalúo si el daño realizado supera la vida que queda
-        if ((enemigo.vida - danioRealizado) < 0) {
-            enemigo.vida = 0
-            // danio = 0
+        if ((oponente.vida - danioRealizado) <= 0) {
+            oponente.vida = 0
+            alert(' **MUERTE** ')
         }
         else {
-            enemigo.vida -= danioRealizado
+            oponente.vida -= danioRealizado
         }
     }
 
     defender() {
         if (!this.estaDefendiendo) {
-            console.log('Defendiendo!')
+            alert('Defendiendo!')
             this.estaDefendiendo = true
         }
         else {
-            console.log('Bajando la guardia..')
             this.estaDefendiendo = false
         }
     }

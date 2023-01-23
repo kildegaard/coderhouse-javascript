@@ -7,46 +7,103 @@ const bienvenida = () => {
 }
 
 const cargaDePersonajes = () => {
-    let personaje = new Personaje(nombre = 'Cain', vida = 80, mana = 100)
-    let enemigo = new Enemigo(nombre = 'Lucifer', vida = 100)
+    alert('Se están cargando los personajes..')
+    let personaje = new Personaje(nombre = 'Cain', vida = 20, mana = 100)
+    let enemigo = new Enemigo(nombre = 'Lucifer', vida = 20)
+    let devuelvo = [personaje, enemigo]
+    alert('Personajes cargados!!')
+    return devuelvo
 }
 
-const turnoEnemigo = () => {
+const turnoEnemigo = (enemigo, pers) => {
     const tiradaDeAzar = tirarDado(2)
     if (tiradaDeAzar == 1) {
-        // El enemigo ataca
+        alert('El enemigo te está atacando!')
+        enemigo.atacarFisico(pers)
+        if (pers.vida > 0) {
+            alert(`Tu vida actual es ${pers.vida}`)
+        }
     }
     else {
         // El enemigo se pone en posición defensiva para el siguiente turno
+        enemigo.defender()
+        // alert('El enemigo se pone en posición defensiva')
     }
 }
 
-const menu = () => {
+const mostrarSituacion = (personaje, enemigo) => {
+    alert(`Vida del personaje: ${personaje.vida}\nVida del enemigo: ${enemigo.vida}`)
+}
+
+const menuDeJugador = () => {
     let opcion
+
     do {
         opcion = parseInt(prompt("Opciones disponibles:\n1 - Atacar al enemigo\n2 - Defenderse el próximo turno\n3 - Salir del juego\n\nIngrese una opción: "))
-
         switch (opcion) {
             case 1:
-                alert("Opción 1 elegida\n" + "Vida del enemigo: " + verVida())
+                alert("Opción 1 elegida\nAtacando al enemigo!")
                 break
             case 2:
-                danio = atacar()
-                alert("Opción 2 elegida\nAtacaste al enemigo!\n\nDaño realizado: " + danio + "\nVida restante: " + verVida())
+                alert('Opcion 2 elegida\nEl siguiente turno estarás defendiéndote')
                 break
             case 3:
                 alert("Opción 3 elegida\nAdiós!")
                 break
             default:
-                alert("Opción incorrecta, vuelva a ingresar")
+                alert("Opción incorrecta")
         }
-    } while (opcion != 3)
+    }
+    while (opcion != 1 && opcion != 2 && opcion != 3)
+    return opcion
 }
 
 const main = () => {
-    bienvenida()
-    cargaDePersonajes()
-    // menu()
+
+    // bienvenida()
+    let opcion
+    let contrincantes = cargaDePersonajes()
+    let personaje = contrincantes[0]
+    let enemigo = contrincantes[1]
+
+    alert(`Vos sos ${personaje.nombre} y tenés ${personaje.vida} puntos de vida\nEl enemigo es ${enemigo.nombre} y tiene ${enemigo.vida} puntos de vida\n\nQué comience la batalla!`)
+
+    while (personaje.vida > 0 || enemigo.vida > 0) {
+
+        alert('Turno del jugador')
+        opcion = menuDeJugador()
+        if (opcion == 1) {
+            // Ataco al enemigo
+            personaje.atacarFisico(enemigo)
+            if (enemigo.vida > 0) {
+                alert(`La vida del enemigo ahora es ${enemigo.vida}`)
+            }
+            else {
+                alert('El enemigo sucumbió!')
+                break
+            }
+        }
+        else if (opcion == 2) {
+            // Me defiendo
+            personaje.defender()
+        }
+        else if (opcion == 3) {
+            break
+        }
+
+        alert('Turno del enemigo')
+        turnoEnemigo(enemigo, personaje)
+        if (personaje.vida <= 0) {
+            alert('HAS MUERTO!')
+            break
+        }
+
+        mostrarSituacion(personaje, enemigo)
+    }
+
+    // Termina el juego
+    alert('Fin del juego!')
+
 }
 
 
