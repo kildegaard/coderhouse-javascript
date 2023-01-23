@@ -20,11 +20,11 @@ Uso de do-while:
 
 ## Checklist de elementos necesarios para la entrega:
 
-- [ ] Entradas con prompt()
-- [ ] Declarar variables
-- [ ] Instanciar objetos
-- [ ] Crear funciones y/o métodos
-- [ ] Salidas con alert() o console.log()
-- [ ] Uso de Arrays
-- [ ] Uso de métodos de Arrays (búsqueda, filtrado, ...)
+- [x] Entradas con prompt()
+- [x] Declarar variables
+- [x] Instanciar objetos
+- [x] Crear funciones y/o métodos
+- [x] Salidas con alert() o console.log()
+- [x] Uso de Arrays
+- [x] Uso de métodos de Arrays (búsqueda, filtrado, ...)
 
