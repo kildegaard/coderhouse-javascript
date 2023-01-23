@@ -4,11 +4,13 @@ const bienvenida = () => {
     const text1 = 'Bienvenidos a la segunda pre-entrega del curso de Javascript de coderhouse!\nA continuación se dará explicación del prototipo de videojuego realizado'
     const text2 = 'El videojuego (por ahora en fase ultra alpha) tiene un enemigo y un personaje(uno mismo)\nPor turnos, uno puede ir atacando al enemigo y éste atacarlo a uno. Existe la posibilidad de defenderse, lo cual reduce el daño recibido.\nHay muchas funcionalidades que aún no están habilitadas, esperando a la próxima entrega! Keep calm and roll your dices!'
 
-    alert(text1)
-    alert(text2)
+    const lista_textos = [text1, text2]
+
+    lista_textos.forEach(texto => alert(texto))
 }
 
 const cargaDePersonajes = () => {
+
     alert('Se están cargando los personajes..')
     let personaje = new Personaje(nombre = 'Cain', vida = 20, mana = 100)
     let enemigo = new Enemigo(nombre = 'Lucifer', vida = 20)
@@ -62,7 +64,7 @@ const menuDeJugador = () => {
 
 const main = () => {
 
-    // bienvenida()
+    bienvenida()
     let opcion
     let contrincantes = cargaDePersonajes()
     let personaje = contrincantes[0]
