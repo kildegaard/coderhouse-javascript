@@ -62,7 +62,7 @@ const menuDeJugador = () => {
 
 const main = () => {
 
-    // bienvenida()
+    bienvenida()
     let opcion
     let contrincantes = cargaDePersonajes()
     let personaje = contrincantes[0]
