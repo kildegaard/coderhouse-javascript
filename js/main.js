@@ -36,7 +36,8 @@ const turnoEnemigo = (enemigo, pers) => {
 }
 
 const mostrarSituacion = (personaje, enemigo) => {
-    alert(`Vida del personaje: ${personaje.vida}\nVida del enemigo: ${enemigo.vida}`)
+    displayVida.innerHTML = `Vida del personaje: <strong>${personaje.vida}</strong>     Vida del enemigo: <strong>${enemigo.vida}</strong>`
+    console.log('eee')
 }
 
 const menuDeJugador = () => {
@@ -111,5 +112,25 @@ const main = () => {
 }
 
 // Inicio de ejecución del programa
+
 let botonEjecutar = document.getElementById('btn-ejecutar')
+let botonAtacar = document.getElementById('btn-atacar')
+let botonDefender = document.getElementById('btn-defender')
+let displayTexto = document.getElementById('caja-display-texto')
+let displayVida = document.getElementById('caja-display-vidas')
+
 botonEjecutar.addEventListener('click', main)
+
+botonAtacar.addEventListener('click', () => {
+    displayTexto.innerText = 'Apreté ATACAR!'
+})
+
+botonDefender.addEventListener('click', () => {
+    displayTexto.innerText = 'Apreté DEFENDER!'
+})
+
+Swal.fire({
+    html: 'Bienvenidos a la tercera pre-entrega del curso de Javascript de coderhouse!<br>A continuación se dará explicación del prototipo de videojuego realizado<br><br>El videojuego (por ahora en fase ultra alpha) tiene un enemigo y un personaje(uno mismo)\nPor turnos, uno puede ir atacando al enemigo y éste atacarlo a uno. Existe la posibilidad de defenderse, lo cual reduce el daño recibido.<br>Hay muchas funcionalidades que aún no están habilitadas, esperando a la próxima entrega!<br><br>Keep calm and roll your dices!',
+    icon: 'info',
+    confirmButtonText: "Vamo a juga"
+})

@@ -11,23 +11,27 @@
     <!-- Mi propio CSS -->
     <link rel="stylesheet" href="./css/style.css">
 </head>
-<title>Segunda pre entrega</title>
+<title>Tercera pre entrega</title>
 </head>
 
 <body>
-    <h1 class="text-center mb-5">Bienvenidos a la segunda pre entrega!</h1>
+    <h1 class="text-center mb-5">Bienvenidos a la tercera pre entrega!</h1>
 
-    <div class="container-fluid elementos">
+    <div class="container-fluid">
         <div class="cajita">
-            <h2>Cajita Mágica</h2>
-            <p class="fs-4 mt-4 text-center">Esta cajita es solo para distraer! Todo el trabajo se visualiza en los
-                alerts/prompts 😊</p>
-            <p class="fs-4 p-3 bg-info bg-opacity-10 border border-info rounded">El programa es un prototipo de juego de
-                rol: hay un enemigo y las opciones disponibles son atacar o defenderse</p>
+            <p id="caja-display-texto" class="fs-4 p-3 bg-info bg-opacity-10 border border-info rounded caja-display-1">
+            </p>
+            <p id="caja-display-vidas" class="fs-4 p-3 bg-dark bg-opacity-10 border border-info rounded caja-display-2">
+            </p>
+            <div class="botones-juego">
+                <button id="btn-atacar" class="btn btn-primary">Atacar</button>
+                <button id="btn-defender" class="btn btn-secondary">Defender</button>
+            </div>
+            <button id="btn-ejecutar" class="btn btn-primary">Iniciar juego</button>
         </div>
-        <button id="btn-ejecutar" class="btn btn-primary">Iniciar juego</button>
     </div>
 
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./js/personajes.js"></script>
     <script src="./js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"

@@ -20,11 +20,12 @@ body {
 .cajita {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     align-items: center;
+    gap: 20px;
 
     width: 500px;
-    /* margin-top: 10px; */
-    /* height: 500px; */
+    height: 400px;
     padding: 25px;
 
     border: 2px solid;
@@ -42,9 +43,29 @@ body {
     text-align: center;
 }
 
+.caja-display-1 {
+    height: 150px;
+    width: 100%;
+    text-align: left;
+    overflow: hidden;
+}
+
+.caja-display-2 {
+    /* height: 55px; */
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    font-size: 15px !important;
+}
+
 #btn-ejecutar {
     font-size: 2em;
     padding: 5px;
     width: 300px;
     height: 60px;
+}
+
+.botones-juego {
+    display: flex;
+    gap: 60px;
 }
