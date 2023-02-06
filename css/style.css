@@ -51,11 +51,12 @@ body {
 }
 
 .caja-display-2 {
-    /* height: 55px; */
+    height: 50px;
     width: 100%;
     text-align: center;
     overflow: hidden;
     font-size: 15px !important;
+    margin-bottom: 0;
 }
 
 #btn-ejecutar {
