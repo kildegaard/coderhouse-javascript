@@ -1,3 +1,35 @@
+// Uso del Storage
+const dev = {
+    'nombre': 'Gustavo',
+    'apellido': 'Kildegaard',
+    'entrega': 'tercera pre entrega',
+}
+
+devJson = JSON.stringify(dev)
+sessionStorage.setItem('gameDeveloper', devJson)
+
+let mostrarDev = () => {
+    let desarrollador = JSON.parse(sessionStorage.getItem('gameDeveloper'))
+    cartelito(`Juego desarrollado por: ${desarrollador.nombre} ${desarrollador.apellido}`)
+    cartelito(`Tipo de trabajo: ${desarrollador.entrega}`)
+}
+
+const cartelito = (mensaje) => {
+    Toastify({
+        text: mensaje,
+        duration: 1000,
+        destination: "https://github.com/kildegaard",
+        newWindow: true,
+        close: true,
+        gravity: "bottom",
+        position: "right",
+        stopOnFocus: true,
+        style: {
+            background: "linear-gradient(to right, #00b09b, #96c93d)",
+        }
+    }).showToast()
+}
+
 const sleep = (ms) => {
     return new Promise(resolve => setTimeout(resolve, ms))
 }
@@ -32,6 +64,10 @@ const mostrarSituacion = (personaje, enemigo) => {
 }
 
 const main = () => {
+
+
+    // Habilitar los botones de juego
+    botonesJuego.style.display = 'flex'
 
     let contrincantes = cargaDePersonajes()
     let personaje = contrincantes[0]
@@ -81,10 +117,12 @@ const main = () => {
 // Inicio de ejecución del programa
 
 let botonEjecutar = document.getElementById('btn-ejecutar')
+let botonesJuego = document.getElementById('btn-juego')
 let botonAtacar = document.getElementById('btn-atacar')
 let botonDefender = document.getElementById('btn-defender')
 let displayTexto = document.getElementById('caja-display-texto')
 let displayVida = document.getElementById('caja-display-vidas')
+let devBtn = document.getElementById('dev-btn')
 
 Swal.fire({
     html: 'Bienvenidos a la tercera pre-entrega del curso de Javascript de coderhouse!<br>A continuación se dará explicación del prototipo de videojuego realizado<br><br>El videojuego (por ahora en fase ultra alpha) tiene un enemigo y un personaje(uno mismo)\nPor turnos, uno puede ir atacando al enemigo y éste atacarlo a uno. Existe la posibilidad de defenderse, lo cual reduce el daño recibido.<br>Hay muchas funcionalidades que aún no están habilitadas, esperando a la próxima entrega!<br><br>Keep calm and roll your dices!',
@@ -93,3 +131,4 @@ Swal.fire({
 })
 
 botonEjecutar.addEventListener('click', main)
+devBtn.addEventListener('click', mostrarDev)

@@ -70,3 +70,12 @@ body {
     display: flex;
     gap: 60px;
 }
+
+#btn-juego {
+    display: none;
+}
+
+#dev-btn {
+    width: 50px;
+    opacity: 0.15;
+}

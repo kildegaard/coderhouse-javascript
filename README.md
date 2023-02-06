@@ -13,8 +13,8 @@ Al atacar se tira un dado y de acuerdo al valor, se da el daño. Si sale 6, es c
 
 ## Checklist de elementos necesarios para la entrega:
 
-- [ ] Uso de JSON
-- [ ] Uso de Storage
-- [ ] Instanciar objetos
-- [ ] Manejo del DOM
-- [ ] Uso de Eventos del usuario
+- [x] Uso de JSON
+- [x] Uso de Storage
+- [x] Instanciar objetos
+- [x] Manejo del DOM
+- [x] Uso de Eventos del usuario

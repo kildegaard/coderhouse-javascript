@@ -10,6 +10,7 @@
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <!-- Mi propio CSS -->
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
 <title>Tercera pre entrega</title>
 </head>
@@ -23,14 +24,16 @@
             </p>
             <p id="caja-display-vidas" class="fs-4 p-3 bg-dark bg-opacity-10 border border-info rounded caja-display-2">
             </p>
-            <div class="botones-juego">
+            <div id="btn-juego" class="botones-juego">
                 <button id="btn-atacar" class="btn btn-primary">Atacar</button>
                 <button id="btn-defender" class="btn btn-secondary">Defender</button>
             </div>
             <button id="btn-ejecutar" class="btn btn-primary">Iniciar juego</button>
         </div>
+        <button id="dev-btn" class="btn btn-warning">¿?</button>
     </div>
 
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./js/personajes.js"></script>
     <script src="./js/main.js"></script>
