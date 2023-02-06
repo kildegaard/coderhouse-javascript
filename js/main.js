@@ -1,4 +1,11 @@
+const sleep = (ms) => {
+    const date = Date.now()
+    let currentDAte = null
+    do {
+        currentDAte = Date.now()
 
+    } while (currentDAte - date < ms)
+}
 
 // const bienvenida = () => {
 //     const text1 = 'Bienvenidos a la segunda pre-entrega del curso de Javascript de coderhouse!\nA continuación se dará explicación del prototipo de videojuego realizado'
@@ -11,22 +18,30 @@
 
 const cargaDePersonajes = () => {
 
-    displayTexto.innerHTML = 'Se están cargando los personajes..'
-    alert('Se están cargando los personajes..')
+    console.log('entre a carga')
+    sleep(1000)
+    console.log('paso un segundo')
+    displayTexto.innerText = 'Se están cargando los personajes..'
+    // alert('Se están cargando los personajes..')
     let personaje = new Personaje(nombre = 'Cain', vida = 20, mana = 100)
     let enemigo = new Enemigo(nombre = 'Lucifer', vida = 20)
     let devuelvo = [personaje, enemigo]
-    alert('Personajes cargados!!')
+
+    sleep(1000)
+
+    displayTexto.innerHTML = 'Personajes Cargados!'
     return devuelvo
 }
 
 const turnoEnemigo = (enemigo, pers) => {
     const tiradaDeAzar = tirarDado(2)
     if (tiradaDeAzar == 1) {
-        alert('El enemigo te está atacando!')
+        // alert('El enemigo te está atacando!')
+        displayTexto.innerHTML = 'El enemigo te está atacando!'
         enemigo.atacarFisico(pers)
         if (pers.vida > 0) {
-            alert(`Tu vida actual es ${pers.vida}`)
+            // alert(`Tu vida actual es ${pers.vida}`)
+            displayTexto.innerHTML = `Tu vida actual es ${pers.vida}`
         }
     }
     else {
@@ -72,20 +87,24 @@ const main = () => {
     let personaje = contrincantes[0]
     let enemigo = contrincantes[1]
 
-    alert(`Vos sos ${personaje.nombre} y tenés ${personaje.vida} puntos de vida\nEl enemigo es ${enemigo.nombre} y tiene ${enemigo.vida} puntos de vida\n\nQué comience la batalla!`)
-
+    // alert(`Vos sos ${personaje.nombre} y tenés ${personaje.vida} puntos de vida\nEl enemigo es ${enemigo.nombre} y tiene ${enemigo.vida} puntos de vida\n\nQué comience la batalla!`)
+    displayTexto.innerHTML = `Vos sos ${personaje.nombre} y tenés ${personaje.vida} puntos de vida\nEl enemigo es ${enemigo.nombre} y tiene ${enemigo.vida} puntos de vida\n\nQué comience la batalla!`
+    /*
     while (personaje.vida > 0 || enemigo.vida > 0) {
 
-        alert('Turno del jugador')
+        // alert('Turno del jugador')
+        displayTexto.innerHTML = 'Turno del jugador'
         opcion = menuDeJugador()
         if (opcion == 1) {
             // Ataco al enemigo
             personaje.atacarFisico(enemigo)
             if (enemigo.vida > 0) {
-                alert(`La vida del enemigo ahora es ${enemigo.vida}`)
+                // alert(`La vida del enemigo ahora es ${enemigo.vida}`)
+                displayTexto.innerHTML = `La vida del enemigo ahora es ${enemigo.vida}`
             }
             else {
-                alert('El enemigo sucumbió!')
+                // alert('El enemigo sucumbió!')
+                displayTexto.innerHTML = 'El enemigo sucumbió!'
                 break
             }
         }
@@ -97,18 +116,21 @@ const main = () => {
             break
         }
 
-        alert('Turno del enemigo')
+        // alert('Turno del enemigo')
+        displayTexto.innerHTML = 'Turno del enemigo'
         turnoEnemigo(enemigo, personaje)
         if (personaje.vida <= 0) {
-            alert('HAS MUERTO!')
+            // alert('HAS MUERTO!')
+            displayTexto.innerHTML = 'HAS MUERTO!'
             break
         }
 
         mostrarSituacion(personaje, enemigo)
     }
-
+    */
     // Termina el juego
-    alert('Fin del juego!')
+    // alert('Fin del juego!')
+    // Swal.fire('Fin del juego!')
 
 }
 
@@ -130,8 +152,9 @@ botonDefender.addEventListener('click', () => {
     displayTexto.innerText = 'Apreté DEFENDER!'
 })
 
-Swal.fire({
-    html: 'Bienvenidos a la tercera pre-entrega del curso de Javascript de coderhouse!<br>A continuación se dará explicación del prototipo de videojuego realizado<br><br>El videojuego (por ahora en fase ultra alpha) tiene un enemigo y un personaje(uno mismo)\nPor turnos, uno puede ir atacando al enemigo y éste atacarlo a uno. Existe la posibilidad de defenderse, lo cual reduce el daño recibido.<br>Hay muchas funcionalidades que aún no están habilitadas, esperando a la próxima entrega!<br><br>Keep calm and roll your dices!',
-    icon: 'info',
-    confirmButtonText: "Vamo a juga"
-})
+
+// Swal.fire({
+//     html: 'Bienvenidos a la tercera pre-entrega del curso de Javascript de coderhouse!<br>A continuación se dará explicación del prototipo de videojuego realizado<br><br>El videojuego (por ahora en fase ultra alpha) tiene un enemigo y un personaje(uno mismo)\nPor turnos, uno puede ir atacando al enemigo y éste atacarlo a uno. Existe la posibilidad de defenderse, lo cual reduce el daño recibido.<br>Hay muchas funcionalidades que aún no están habilitadas, esperando a la próxima entrega!<br><br>Keep calm and roll your dices!',
+//     icon: 'info',
+//     confirmButtonText: "Vamo a juga"
+// })

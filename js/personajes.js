@@ -25,7 +25,8 @@ class SerVivo {
 
         // Evalúo la situación de DEFENDA o NO DEFENSA
         if (oponente.estaDefendiendo) {
-            alert('Defensas en alto! Reducción de daño del 50%')
+            // alert('Defensas en alto! Reducción de daño del 50%')
+            displayTexto.innerHTML = 'Defensas en alto! Reducción de daño del 50%'
             danioRealizado = danio * 0.5 // Defenderse hace que haga la mitad del daño
             oponente.defender() // Al hacer esto bajo sus defensas para la siguiente ronda
             // oponente.estaDefendiendo = false
@@ -37,7 +38,8 @@ class SerVivo {
         // Evalúo si el daño realizado supera la vida que queda
         if ((oponente.vida - danioRealizado) <= 0) {
             oponente.vida = 0
-            alert(' **MUERTE** ')
+            // alert(' **MUERTE** ')
+            displayTexto.innerHTML = ' **MUERTE** '
         }
         else {
             oponente.vida -= danioRealizado
@@ -46,7 +48,8 @@ class SerVivo {
 
     defender() {
         if (!this.estaDefendiendo) {
-            alert('Defendiendo!')
+            // alert('Defendiendo!')
+            displayTexto.innerHTML = 'Defendiendo!'
             this.estaDefendiendo = true
         }
         else {
