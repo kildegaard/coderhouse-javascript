@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #202020;
+    color: #FAFAFA;
+}
+
+.container-fluid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.cajita {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+
+    width: 500px;
+    height: 400px;
+    padding: 25px;
+
+    border: 2px solid;
+    border-radius: 30px;
+    background-color: #CACACA;
+
+    color: #202020;
+}
+
+.cajita h2 {
+    width: 100%;
+    border-top: 2px solid #202020;
+    border-bottom: 2px solid #202020;
+    line-height: 1.5em;
+    text-align: center;
+}
+
+.caja-display-1 {
+    height: 150px;
+    width: 100%;
+    text-align: left;
+    overflow: hidden;
+}
+
+.caja-display-2 {
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    font-size: 15px !important;
+    margin-bottom: 0;
+}
+
+#btn-ejecutar {
+    font-size: 2em;
+    padding: 5px;
+    width: 300px;
+    height: 60px;
+}
+
+.botones-juego {
+    display: flex;
+    gap: 60px;
+}
+
+#btn-juego {
+    display: none;
+}
+
+#dev-btn {
+    width: 50px;
+    opacity: 0.15;
+}
+
+.link {
+    padding: 10px;
+    border: 2px solid #CACACA;
+    border-radius: 15px;
+    background-color: blanchedalmond;
+    width: 150px;
+    margin: 0 auto;
+    /* float: right; */
+    position: absolute;
+    right: 50px;
+    top: 100px;
+    text-align: center;
+}
+
+.link a {
+    text-decoration: none;
+}
+
+.link:hover {
+    transform: scale(1.05);
+    background-color: bisque;
+}
